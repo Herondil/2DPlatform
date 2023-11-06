@@ -21,10 +21,12 @@ public class Movement : MonoBehaviour
 
         Debug.DrawLine(rgbdref.position, dir*5, Color.red);
 
+        /*
         if(dir.x < 0)
         {
             transform.localScale = new Vector3(-1, 1,1);
         }
+        **/
     }
 
     private void FixedUpdate()
