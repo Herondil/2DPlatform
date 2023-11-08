@@ -21,17 +21,24 @@ public class Movement : MonoBehaviour
 
         Debug.DrawLine(rgbdref.position, dir*5, Color.red);
 
-        /*
+        
         if(dir.x < 0)
         {
             transform.localScale = new Vector3(-1, 1,1);
         }
-        **/
+
+        if (dir.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
     }
 
     private void FixedUpdate()
     {
         Vector2 d = new Vector2(dir.x, rgbdref.velocity.y).normalized;
-        rgbdref.velocity = d*speed;
+        Vector2 t = d*speed;
+        t.y = rgbdref.velocity.y;
+        rgbdref.velocity = t;
     }
 }
