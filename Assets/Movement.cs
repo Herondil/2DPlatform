@@ -39,6 +39,8 @@ public class Movement : MonoBehaviour
         Vector2 d = new Vector2(dir.x, rgbdref.velocity.y).normalized;
         Vector2 t = d*speed;
         t.y = rgbdref.velocity.y;
+        
+
         rgbdref.velocity = t;
     }
 }
